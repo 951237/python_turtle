@@ -1,6 +1,6 @@
 # 도형그리기 반복하여그리
 
-import turtle
+import turtle, time
 
 wn = turtle.Screen()
 t = turtle.Turtle()
@@ -31,15 +31,15 @@ def d_want(want, angle):  # 원하는 도형 그리기
         t.left(angle)
 
 
-def d_want_loop(v_loop, v_angle, v_distance):  # 일정한 중심에서 원하는 도형 반복하여 그리기
-    for i in range(v_loop):
-        d_want(100, 3.6)
-        t.penup()
-        t.right(v_angle)
-        t.forward(v_distance)
-        t.pendown()
+def d_move(v_angle, v_distance): # 일정하게 각도로 주어진 거리만큼 이동하기
+    t.penup()
+    t.right(v_angle)
+    t.forward(v_distance)
+    t.pendown()
 
 
-d_want(4, 90)
+for i in range(10):
+    d_want(5, 72)
+    d_move(36, 50)
 
-wn.mainloop()
+time.sleep(5)
